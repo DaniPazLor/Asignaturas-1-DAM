@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pedidos SYSTEM "DTD.dtd" >
+<pedidos>
+<sucursal codigo="A0000001">
+<direccion>C/Castilla, 1</direccion>
+<direccion>C/Castilla, 1</direccion>
+<trabajador>José luis Comesaña</trabajador>
+<fecha>12-01-2012</fecha>
+<observacion>Urgente</observacion>
+<articulo codigo="AAA-111">
+<unidades>12</unidades>
+<precio>100</precio>
+<observaciones>Producto muy frágil</observaciones>
+<plazo>10</plazo>
+</articulo>
+<articulo codigo="AAA-112">
+<unidades>10</unidades>
+<precio>10</precio>
+<observaciones>No apilar más de cinco paquetes</observaciones>
+<plazo>8</plazo>
+</articulo>
+</sucursal>
+<sucursal codigo="B00000002">
+<direccion>Avda. Gran Vía s/n</direccion>
+<trabajador>Antonio Resines</trabajador>
+<fecha>10-02-2012</fecha>
+<articulo codigo="ABC-001">
+<unidades>5</unidades>
+<precio>50</precio>
+<observaciones />
+<plazo>3</plazo>
+</articulo>
+</sucursal>
+</pedidos>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--Este es el ejercicio 3 de la tarea 1-->
+<!DOCTYPE ciclo>
+<?xml-stylesheet href="librohtml.xsl" type="text/xsl"?>
+<ciclo nombre="DAM">
+    <modulo nombre="Lenguaje de Marcas y Sistemas de Gestión" horas="4h. semanales" caracter="obligatorio">
+       <fechainicio> 15 de septiembre de 2010 </fechainicio>
+       <fechafin> 30 de junio de 2011 </fechafin>
+        <alumnos>
+            <alumno nota="" faltas="">
+                <nombre> Ana Fernández Gutiérrez</nombre>
+                <dni> 16965696L </dni>
+                <telefono> 789654321 </telefono>
+                <email> ana.fdezgtrrez@hotmail.com </email>
+                <direccion> C/ El Percebe, 13 </direccion>
+                <localidad> Santander </localidad>
+                <cp>39302</cp>
+            </alumno>
+            <alumno nota="apto" faltas="ninguna">
+                <nombre> Pepito Grillo </nombre>
+                <dni> 98765432H </dni>
+                <telefono> 656566555 </telefono>
+                <email> yhyh@yahoo.com </email>
+                <direccion> Avd. El Pez, 5 </direccion>
+                <localidad> Suances </localidad>
+                <cp> 39401 </cp>
+            </alumno>
+        </alumnos>
+    </modulo>
+</ciclo>

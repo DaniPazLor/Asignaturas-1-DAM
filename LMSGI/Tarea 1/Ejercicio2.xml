@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--Este es el ejercicio 2 de la tarea 1-->
+<!DOCTYPE recetas>
+<?xml-stylesheet href="librohtml.xsl" type="text/xsl"?>
+<recetas>
+      <receta>
+          <nombre> Sopa de cebolla </nombre>
+          <comensales> 4 </comensales>
+          <ingredientes>
+              <ingrediente cantidad="1 Kg."> cebollas</ingrediente>
+              <ingrediente cantidad="2 l."> caldo de carne</ingrediente>
+              <ingrediente cantidad="100 gr."> mantequilla </ingrediente>
+              <ingrediente cantidad="1 cucharada"> harina </ingrediente>
+              <ingrediente cantidad="100 gr."> queso emmental suizo o gruyére rallado</ingrediente>
+              <ingrediente> Pan tostado en rebanadas </ingrediente>
+              <ingrediente> tomillo </ingrediente>
+              <ingrediente cantidad="1 hoja"> laurel </ingrediente>
+              <ingrediente> pimienta </ingrediente>
+          </ingredientes>
+          <proceso>
+              <paso1> Pelar y partir las cebollas en rodajas finas.</paso1>
+              <paso2> Rehogarlas con la mantequilla, sal y pimienta a fuego lento hasta que estén transparentes sin dorarse.  </paso2>
+              <paso3> Añadir la harina sin dejar de remover. </paso3>
+              <paso4> Ponerlo en una cazuela con el caldo, el tomillo y el laurel. </paso4>
+              <paso5> Dejar cocer a fuego lento durante unos 15 minutos. </paso5>
+              <paso6> Poner las rebanadas de pan encima, espolvorear el queso y gratinar al horno. </paso6>
+          </proceso>
+      </receta>
+</recetas>

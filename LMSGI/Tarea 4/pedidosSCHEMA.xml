@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet href="librohtml.xsl" type="text/xsl"?>
+
+<pedidos xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="pedidos.xsd">
+    <sucursal codSucursal="12345678EF">
+        <direccion>Calle de chopo numero 23</direccion>
+        <codPedido>P5678azd</codPedido>
+        <nomTrabajador>Juan Perez Gomez</nomTrabajador>
+        <fechaPedido>2021-01-13</fechaPedido>
+        <observacion>urgente</observacion>
+        <plazoRevision>19</plazoRevision>
+        <articulo codArticulo="FGB-378">
+            <unidadesPedidas>58</unidadesPedidas>
+            <precio>158.35</precio>
+            <observaciones>Empaquetados en cajas de 4 packs</observaciones>
+        </articulo>
+    </sucursal>
+        <sucursal codSucursal="P5952AFA">
+        <direccion>Calle Ferrari numero 78</direccion>
+        <codPedido>Z687afgs</codPedido>
+        <nomTrabajador>Paula Gomez Verde</nomTrabajador>
+        <fechaPedido>2019-11-23</fechaPedido>
+        <observacion>incompleto</observacion>
+        <plazoRevision>5</plazoRevision>
+        <articulo codArticulo="FGB-378">
+            <unidadesPedidas>25</unidadesPedidas>
+            <precio>310.85</precio>
+            <observaciones>Transportar con sumo cuidado, muy frágil</observaciones>
+        </articulo>
+    </sucursal>
+</pedidos>

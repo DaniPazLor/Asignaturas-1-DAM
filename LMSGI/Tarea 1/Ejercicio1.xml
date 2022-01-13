@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--Este es el xml del ejercicio 1 del tema 1-->
+<!DOCTYPE agenda>
+<?xml-stylesheet href="librohtml.xsl" type="text/xsl"?>
+<agenda>
+      <nombre>José</nombre>
+      <apellidos>Gómez Nuñez</apellidos>
+     <direccion>C/ Cortada por arriba</direccion>
+     <poblacion>Bejer de los caballeros</poblacion>
+      <telefonos>
+         <casa>983202020</casa>
+         <movil>666201040</movil>
+          <trabajo>654789456</trabajo>
+      </telefonos>
+</agenda>

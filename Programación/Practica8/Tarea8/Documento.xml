@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<datos_clientes>
+    <cliente>
+        <id>
+            071139088L
+            <!--El DNI/NIE no es válido-->
+        </id>
+        <nombre>Daniel</nombre>
+        <apellidos>Paz Lorenzo</apellidos>
+        <telefonos total="5">
+            <telefono>979346897</telefono>
+            <telefono>659626245</telefono>
+            <telefono>656458962</telefono>
+            <telefono>+34988656652</telefono>
+            <telefono>+34987202010</telefono>
+        </telefonos>
+        <mails>
+            <mail>feo@yahoo.es</mail>
+            <mail>suna_19@hotmail.com</mail>
+        </mails>
+    </cliente>
+    <cliente>
+        <id>
+            X12345678F
+            <!--El DNI/NIE no es válido-->
+        </id>
+        <nombre>nombre</nombre>
+        <apellidos>apellidos</apellidos>
+        <telefonos total="3">
+            <telefono>9123456789</telefono>
+            <telefono>612345678</telefono>
+            <telefono>+8212345678</telefono>
+        </telefonos>
+        <mails>
+            <mail>prueba@prueba.com</mail>
+            <mail>test@test.com</mail>
+        </mails>
+    </cliente>
+    <cliente>
+        <id>
+            12345678Z
+            <!--El DNI/NIE es válido-->
+        </id>
+        <nombre>nombre</nombre>
+        <apellidos>apellidos</apellidos>
+        <telefonos total="1">
+            <telefono>952333333</telefono>
+        </telefonos>
+        <mails>
+            <mail>prueba@prueba.com</mail>
+            <mail>test@test.com</mail>
+        </mails>
+    </cliente>
+</datos_clientes>

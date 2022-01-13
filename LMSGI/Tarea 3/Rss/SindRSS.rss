@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+
+  <channel>
+<title>INFORMACIÓN DEL TIEMPO</title>
+<atom:link href="rss/Tema3.rss" rel="self" type="application/rss+xml" />
+<link>https://www.eltiempo.es/</link>
+<description>Canal de contenido del tiempo</description>
+<language>es</language>
+		<item>
+			<title>Información del tiempo en Valladolid</title>
+			<guid>https://www.tiempo.es/valladolid-valladolid-es0vd0179.html</guid>
+      <description>Tiempo en Valladolid</description>
+		</item>
+		<item>
+    <title>Noticia de mi elección</title>
+    <guid>https://www.laopiniondezamora.es/deportes/</guid>
+    <description>Información deportes en Zamora</description>
+		</item>
+	</channel>
+</rss>

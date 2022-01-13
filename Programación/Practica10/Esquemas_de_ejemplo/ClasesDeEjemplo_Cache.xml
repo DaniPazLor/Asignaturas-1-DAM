@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="24" zv="Cache for Windows (x86-32) 2010.1.3 (Build 703)" ts="2012-02-25 17:58:16">
+<Class name="User.Conductor">
+<Super>%Persistent</Super>
+<TimeChanged>62512,59812.25366</TimeChanged>
+<TimeCreated>62505,48407.569596</TimeCreated>
+
+<UDLText name="T">
+<Content><![CDATA[
+// DDI es un documento de identificación (DNI, NIE u otro tipo)
+
+]]></Content>
+</UDLText>
+
+<Property name="DDI">
+<Type>%String</Type>
+<Required>1</Required>
+</Property>
+
+<Index name="DDIidx">
+<PrimaryKey>1</PrimaryKey>
+<Properties>DDI</Properties>
+<Unique>1</Unique>
+</Index>
+
+<UDLText name="T">
+<Content><![CDATA[
+// Nombre del conductor, tipo cadena de texto.
+
+]]></Content>
+</UDLText>
+
+<Property name="Nombre">
+<Type>%String</Type>
+<Required>1</Required>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[
+// Apellidos del conductor, tipo cadena de texto.
+
+]]></Content>
+</UDLText>
+
+<Property name="Apellidos">
+<Type>%String</Type>
+<Required>1</Required>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[
+// Fecha de nacimiento del conductor, tipo fecha, formato DD/MM/AAAA.
+
+]]></Content>
+</UDLText>
+
+<Property name="FechaNacimiento">
+<Type>%Date</Type>
+<Required>1</Required>
+<Parameter name="FORMAT" value="4"/>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[
+// Lista de mails.
+
+]]></Content>
+</UDLText>
+
+<Property name="Mails">
+<Type>%String</Type>
+<Collection>list</Collection>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[
+// Array con los teléfonos.
+
+]]></Content>
+</UDLText>
+
+<Property name="Telefonos">
+<Type>%String</Type>
+<Collection>array</Collection>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[
+// Calcula la edad y retorna un número entero.
+
+]]></Content>
+</UDLText>
+
+<Property name="PuntosCarnet">
+<Type>%Integer</Type>
+<Parameter name="MAXVAL" value="15"/>
+<Parameter name="MINVAL" value="0"/>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[
+// Dirección del conductor.
+
+]]></Content>
+</UDLText>
+
+<Property name="direccion">
+<Type>Direccion</Type>
+</Property>
+
+<Method name="getNombreApellidos">
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[	Quit ..Apellidos_", "_..Nombre
+]]></Implementation>
+</Method>
+
+<Method name="edad">
+<ReturnType>%Integer</ReturnType>
+<Implementation><![CDATA[
+	Set e = ($PIECE($NOW(),",",1)-$PIECE(..FechaNacimiento,",",1))/365
+	Quit e
+]]></Implementation>
+</Method>
+
+<Projection name="ProyeccionJava">
+<Type>%Projection.Java</Type>
+</Projection>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^User.ConductorD</DataLocation>
+<DefaultData>ConductorDefaultData</DefaultData>
+<IdLocation>^User.ConductorD</IdLocation>
+<IndexLocation>^User.ConductorI</IndexLocation>
+<StreamLocation>^User.ConductorS</StreamLocation>
+<Data name="ConductorDefaultData">
+<Structure>listnode</Structure>
+<Subscript/>
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>Nombre</Value>
+</Value>
+<Value name="3">
+<Value>Apellidos</Value>
+</Value>
+<Value name="4">
+<Value>FechaNacimiento</Value>
+</Value>
+<Value name="5">
+<Value>Mails</Value>
+</Value>
+<Value name="6">
+<Value>PuntosCarnet</Value>
+</Value>
+<Value name="7">
+<Value>direccion</Value>
+</Value>
+<Value name="8">
+<Value>DDI</Value>
+</Value>
+<Value name="9">
+<Value>t</Value>
+</Value>
+<Value name="10">
+<Value>HorasSemanales</Value>
+</Value>
+</Data>
+<Data name="Telefonos">
+<Attribute>Telefonos</Attribute>
+<Structure>subnode</Structure>
+<Subscript>"Telefonos"</Subscript>
+</Data>
+</Storage>
+</Class>
+
+
+<Class name="User.Conductores">
+<Super>Persona,%Persistent</Super>
+<TimeChanged>62512,59846.239782</TimeChanged>
+<TimeCreated>62505,48407.569596</TimeCreated>
+
+<UDLText name="T">
+<Content><![CDATA[
+// Fecha de nacimiento del conductor, tipo fecha, formato DD/MM/AAAA.
+
+]]></Content>
+</UDLText>
+
+<Property name="FechaNacimiento">
+<Type>%Date</Type>
+<Required>1</Required>
+<Parameter name="FORMAT" value="4"/>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[
+// Lista de mails.
+
+]]></Content>
+</UDLText>
+
+<Property name="Mails">
+<Type>%String</Type>
+<Collection>list</Collection>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[
+// Array con los teléfonos.
+
+]]></Content>
+</UDLText>
+
+<Property name="Telefonos">
+<Type>%String</Type>
+<Collection>array</Collection>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[
+// Calcula la edad y retorna un número entero.
+
+]]></Content>
+</UDLText>
+
+<Property name="PuntosCarnet">
+<Type>%Integer</Type>
+<Parameter name="MAXVAL" value="15"/>
+<Parameter name="MINVAL" value="0"/>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[
+// Dirección del conductor.
+
+]]></Content>
+</UDLText>
+
+<Property name="direccion">
+<Type>Direccion</Type>
+</Property>
+
+<Method name="edad">
+<ReturnType>%Integer</ReturnType>
+<Implementation><![CDATA[
+	Set e = ($PIECE($NOW(),",",1)-$PIECE(..FechaNacimiento,",",1))/365
+	Quit e
+]]></Implementation>
+</Method>
+
+<Projection name="ProyeccionJava">
+<Type>%Projection.Java</Type>
+</Projection>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DefaultData>ConductoresDefaultData</DefaultData>
+<Data name="ConductoresDefaultData">
+<Structure>listnode</Structure>
+<Subscript>"Conductores"</Subscript>
+<Value name="1">
+<Value>FechaNacimiento</Value>
+</Value>
+<Value name="2">
+<Value>Mails</Value>
+</Value>
+<Value name="3">
+<Value>PuntosCarnet</Value>
+</Value>
+<Value name="4">
+<Value>direccion</Value>
+</Value>
+</Data>
+<Data name="Telefonos">
+<Attribute>Telefonos</Attribute>
+<Structure>subnode</Structure>
+<Subscript>"User.Conductores.Telefonos"</Subscript>
+</Data>
+</Storage>
+</Class>
+
+
+<Class name="User.Direccion">
+<ClassType>serial</ClassType>
+<Super>%SerialObject</Super>
+<TimeChanged>62512,60012.463652</TimeChanged>
+<TimeCreated>62505,42066.484095</TimeCreated>
+
+<UDLText name="T">
+<Content><![CDATA[
+// Tipo de la vía (calle, paseo, paraje, etc.)
+
+]]></Content>
+</UDLText>
+
+<Property name="tipovia">
+<Type>%String</Type>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[
+// Nombre de la vía
+
+]]></Content>
+</UDLText>
+
+<Property name="nombrevia">
+<Type>%String</Type>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[
+// Número.
+
+]]></Content>
+</UDLText>
+
+<Property name="numero">
+<Type>%Integer</Type>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[
+// Bloque, planta, puerta y otro tipo de información.
+
+]]></Content>
+</UDLText>
+
+<Property name="dirinterior">
+<Type>%String</Type>
+</Property>
+
+<Property name="codigopostal">
+<Type>%String</Type>
+</Property>
+
+<Property name="localidad">
+<Type>%String</Type>
+</Property>
+
+<Property name="provincia">
+<Type>%String</Type>
+</Property>
+
+<Property name="region">
+<Type>%String</Type>
+</Property>
+
+<Property name="pais">
+<Type>%String</Type>
+</Property>
+
+<Storage name="Default">
+<Type>%Library.CacheSerialState</Type>
+<State>DireccionState</State>
+<StreamLocation>^User.DireccionS</StreamLocation>
+<Data name="DireccionState">
+<Structure>listnode</Structure>
+<Subscript/>
+<Value name="1">
+<Value>tipovia</Value>
+</Value>
+<Value name="2">
+<Value>nombrevia</Value>
+</Value>
+<Value name="3">
+<Value>numero</Value>
+</Value>
+<Value name="4">
+<Value>dirinterior</Value>
+</Value>
+<Value name="5">
+<Value>codigopostal</Value>
+</Value>
+<Value name="6">
+<Value>localidad</Value>
+</Value>
+<Value name="7">
+<Value>provincia</Value>
+</Value>
+<Value name="8">
+<Value>region</Value>
+</Value>
+<Value name="9">
+<Value>pais</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+
+
+<Class name="User.Persona">
+<Super>%Persistent</Super>
+<TimeChanged>62512,60012.692998</TimeChanged>
+<TimeCreated>62512,47662.970444</TimeCreated>
+
+<UDLText name="T">
+<Content><![CDATA[
+// DDI es un documento de identificación (DNI, NIE u otro tipo)
+
+]]></Content>
+</UDLText>
+
+<Property name="DDI">
+<Type>%String</Type>
+<Required>1</Required>
+</Property>
+
+<Index name="DDIidx2">
+<PrimaryKey>1</PrimaryKey>
+<Properties>DDI</Properties>
+<Unique>1</Unique>
+</Index>
+
+<UDLText name="T">
+<Content><![CDATA[
+// Nombre del conductor, tipo cadena de texto.
+
+]]></Content>
+</UDLText>
+
+<Property name="Nombre">
+<Type>%String</Type>
+<Required>1</Required>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[
+// Apellidos del conductor, tipo cadena de texto.
+
+]]></Content>
+</UDLText>
+
+<Property name="Apellidos">
+<Type>%String</Type>
+<Required>1</Required>
+</Property>
+
+<Method name="getNombreApellidos">
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[	Quit ..Apellidos_", "_..Nombre
+]]></Implementation>
+</Method>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^User.PersonaD</DataLocation>
+<DefaultData>PersonaDefaultData</DefaultData>
+<IdLocation>^User.PersonaD</IdLocation>
+<IndexLocation>^User.PersonaI</IndexLocation>
+<StreamLocation>^User.PersonaS</StreamLocation>
+<Data name="PersonaDefaultData">
+<Structure>listnode</Structure>
+<Subscript/>
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>DDI</Value>
+</Value>
+<Value name="3">
+<Value>Nombre</Value>
+</Value>
+<Value name="4">
+<Value>Apellidos</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+
+
+
+
+<Class name="User.Socio">
+<Super>%Persistent</Super>
+<TimeChanged>62512,53611.238828</TimeChanged>
+<TimeCreated>62498,35489.617941</TimeCreated>
+
+<UDLText name="T">
+<Content><![CDATA[
+// Nombre del socio
+
+]]></Content>
+</UDLText>
+
+<Property name="nombre">
+<Type>%String</Type>
+<Required>1</Required>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[
+// Apellidos del socio
+
+]]></Content>
+</UDLText>
+
+<Property name="apellidos">
+<Type>%String</Type>
+<Required>1</Required>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[
+// Número de socio.
+
+]]></Content>
+</UDLText>
+
+<Property name="numsocio">
+<Type>%String</Type>
+<Required>1</Required>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[
+// Lista con los mails.
+
+]]></Content>
+</UDLText>
+
+<Property name="Mails">
+<Type>%String</Type>
+<Collection>list</Collection>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[
+// Lista con los telefonos.
+
+]]></Content>
+</UDLText>
+
+<Property name="Telefonos">
+<Type>%String</Type>
+<Collection>array</Collection>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[
+/* Ejemplo A.1 de uso de colecciones tipo listas de Caché.
+Inserta un nuevo mail en la list de mails. */
+]]></Content>
+</UDLText>
+
+<Method name="insertarMail">
+<FormalSpec>mail:%String</FormalSpec>
+<Implementation><![CDATA[
+	/* El método Insert de las listas permite insertar un nuevo elemento del tipo 
+	especificado en la lista, se insertará al final, dado que las listas no son 
+	ordenadas. */
+	do ..Mails.Insert(mail)
+]]></Implementation>
+</Method>
+
+<UDLText name="T">
+<Content><![CDATA[
+/* Ejemplo A.2 de uso de colecciones tipo listas de Caché.
+Hacer un recuento de los mails almacenados en la lista. */
+]]></Content>
+</UDLText>
+
+<Method name="contarMails">
+<ReturnType>%Integer</ReturnType>
+<Implementation><![CDATA[
+	/* El método Count de las listas permiten obtener el número de elementos
+	que contienen */
+	Quit ..Mails.Count()
+]]></Implementation>
+</Method>
+
+<UDLText name="T">
+<Content><![CDATA[
+/* Ejemplo A.3 de uso de colecciones tipo listas de Caché.
+ Obtener el mail almacenado en una posición concreta de la lista. 
+ Si dicho mail no existe se retornará cadena vacia (""), también conocido en Caché como
+ null string. Tienes que tener en cuenta que las posiciones se empiezan a numerar por 1
+ y no por 0.*/
+]]></Content>
+</UDLText>
+
+<Method name="obtenerMail">
+<FormalSpec>pos:%Integer</FormalSpec>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	 /* Primero se comprueba si la posición indicada, donde está el elemento a 
+	 obtener, existe o no en la lista. Para ello, hacemos uso del método contarMails
+	 antes implementado. */
+	 if pos<=..contarMails() && pos>=1 
+	 {
+		 /* El método GetAt permite obtener un mail almacenado en una posición concreta.
+		 Su único argumento es la posición a obtener. Tienes que tener en cuenta
+		 que las posiciones se empiezan a numerar por 1, y no por 0. */
+		 Quit ..Mails.GetAt(pos)
+	 }
+	 Else /* Si el mail no existe, se retorna cadena vacía (""), también llamado null string. */
+	 {
+		 Quit ""
+	 }
+]]></Implementation>
+</Method>
+
+<UDLText name="T">
+<Content><![CDATA[
+/* Ejemplo A.4 de uso de colecciones tipo listas de Caché.
+  Eliminar un mail. Retornará 1 (verdadero) se ha eliminado, y 0 (false) en otro caso. 
+  Se le pasa como parámetro la posición del elemento a eliminar, que se empieza a numerar
+  por 1 y no por 0.
+  */
+]]></Content>
+</UDLText>
+
+<Method name="eliminarMail">
+<FormalSpec>pos:%Integer</FormalSpec>
+<ReturnType>%Boolean</ReturnType>
+<Implementation><![CDATA[
+	 Set eliminado=0
+	 /* Volvemos a hacer uso de la función contarMails para saber si la posición
+	 indicada está o no dentro de los límites de almacenamiento de la lista. */
+	 if pos<=..contarMails() && pos>=1 
+	 {
+		 /* El método RemoveAt de las listas permite eliminar un elemento 
+		 de una posición concreta. Se le pasa como argumento la posición a eliminar, que
+		 deberá empezar a contarse en 1 y no en 0. Si consigue eliminarse, entonces
+		 retornará el elemento eliminado, en caso contrario retornará cadena vacía (""),
+		 también llamado null string. */
+		 Set result=..Mails.RemoveAt(pos)
+		 if result="" { Set eliminado = 0 }
+		 else { Set eliminado = 1 write !,"Eliminado:",result }
+	 }
+	 Quit eliminado
+]]></Implementation>
+</Method>
+
+<UDLText name="T">
+<Content><![CDATA[
+/* Ejemplo A.5 de uso de colecciones tipo listas de Caché.
+    Obtener los mails separados por comas. Usando métodos antes creados se obtiene
+    una lista separada por comas de los mails.
+  */
+]]></Content>
+</UDLText>
+
+<Method name="obtenerMails">
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	 Set t=""
+	 for i=1:1:..contarMails() {
+		 if i'=1 { Set t=t_"," }
+		 Set t=t_..obtenerMail(i)
+	 }
+	 Quit t
+]]></Implementation>
+</Method>
+
+<UDLText name="T">
+<Content><![CDATA[
+/* Ejemplo A.6 de uso de colecciones tipo listas de Caché. 
+   Vaciar la lista de mails. */
+]]></Content>
+</UDLText>
+
+<Method name="vaciarMails">
+<Implementation><![CDATA[
+	/* El método clear permite vaciar una lista, dejandola sin elementos. */
+	do ..Mails.Clear()
+]]></Implementation>
+</Method>
+
+<UDLText name="T">
+<Content><![CDATA[
+/* Ejemplo B.1 de uso de colecciones tipo arrays de Caché. 
+ Inserción de un telefono y su tipo en el array. 
+ Se trata de poder almacenar el telefono, junto al tipo, por ejemplo: "fax" junto al 
+ número de fax o "movil" junto al teléfono móvil, para así poder diferenciar el tipo
+ de teléfono.*/
+]]></Content>
+</UDLText>
+
+<Method name="insertarTlf">
+<FormalSpec>numero:%String,tipotlf:%String</FormalSpec>
+<Implementation><![CDATA[
+	 /* Con el método SetAt se inserta un telefono asociado a una llave, que identicará
+	 al telefono por el propósito del mismo.*/
+	 Do ..Telefonos.SetAt(numero,tipotlf)
+	 Quit
+]]></Implementation>
+</Method>
+
+<UDLText name="T">
+<Content><![CDATA[
+/* Ejemplo B.2 de uso de colecciones tipo array de Caché. 
+ Recuperación del telefono de un tipo determinado almacenado en el array. */
+]]></Content>
+</UDLText>
+
+<Method name="obtenerTlf">
+<FormalSpec>tipo:%String</FormalSpec>
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	 /* Se obtiene un elemento etiquetado como "tipo" a través del método GetAt,
+	 retornando el elemento en cuestión o "" (null string) en caso de que no
+	 se encuentre. */
+	 Quit ..Telefonos.GetAt(tipo)
+]]></Implementation>
+</Method>
+
+<UDLText name="T">
+<Content><![CDATA[
+/* Ejemplo B.3 de uso de colecciones tipo array de Caché. 
+ Elimina un telefono (por tipo) introducido previamente en el array. */
+]]></Content>
+</UDLText>
+
+<Method name="eliminarTlf">
+<FormalSpec>tipo:%String</FormalSpec>
+<ReturnType>%Boolean</ReturnType>
+<Implementation><![CDATA[
+	 Set eliminado=0
+	 /* A través del método isDefined se puede averiguar si en el array hay o no un
+	 elemento almacenado con una clave asociada croncreta. Si es así, retornará 1 (true)
+	 en caso contrario retornara 0 (false). */
+	 if ..Telefonos.IsDefined(tipo) {
+		 /* El método RemoveAt elimina un elmento que tenga una clave concreta,
+		 si se ha eliminado retornará el elemento eliminado, en caso contrario, 
+		 por ejemplo, si no existiera el elemento, retornaría cadena vacía (""), 
+		 también conocida como null string. */
+		 Set result=..Telefonos.RemoveAt(tipo)
+		 If result="" { Set eliminado = 0 } Else { set eliminado=1 }
+	 }
+	 Quit eliminado
+]]></Implementation>
+</Method>
+
+<UDLText name="T">
+<Content><![CDATA[
+/* Ejemplo B.4 de uso de colecciones tipo array de Caché. 
+Obtiene la lista de telefonos separadas por comas. Si no hay telefonos, retornará una
+cadena vacía (""), también conocido como null string.
+*/
+]]></Content>
+</UDLText>
+
+<Method name="obtenerTlfs">
+<ReturnType>%String</ReturnType>
+<Implementation><![CDATA[
+	Set result=""
+	/* El método Next, de los arrays permite obtener la primera llave o clave del 
+	primer par llave/valor almacenado, pero solo cuando se le pasa cadena vacía como
+	parámetro. Si no existiese, retonaría cadena vacía. */
+	Set tipotlf=..Telefonos.Next("")
+	while tipotlf'="" {
+		if result'="" { Set result=result_"," }
+		/* Con el método GetAt obtenemos el valor asociado a una llave o clave. */
+		Set result=result_tipotlf_":"_..obtenerTlf(tipotlf)
+		/* El método Next, permite obtener la siguiente llave o clave de la lista 
+		cuando se le pasa una clave, de esa forma, permite iterar sobre el array,
+		como se hace con los iteradores de java. */
+		Set tipotlf=..Telefonos.Next(tipotlf)
+	}
+	Quit result
+]]></Implementation>
+</Method>
+
+<UDLText name="T">
+<Content><![CDATA[
+/* Ejemplo B.5 de uso de colecciones tipo array de Caché.
+Vacia la lista de teléfonos usando el método Clear, de forma similar a como se hace
+con las listas.*/
+]]></Content>
+</UDLText>
+
+<Method name="vaciarTlfs">
+<Implementation><![CDATA[	do ..Telefonos.Clear()
+]]></Implementation>
+</Method>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^User.SocioD</DataLocation>
+<DefaultData>SocioDefaultData</DefaultData>
+<IdLocation>^User.SocioD</IdLocation>
+<IndexLocation>^User.SocioI</IndexLocation>
+<StreamLocation>^User.SocioS</StreamLocation>
+<Data name="SocioDefaultData">
+<Structure>listnode</Structure>
+<Subscript>"Socio"</Subscript>
+<Value name="1">
+<Value>NumSocio</Value>
+</Value>
+<Value name="2">
+<Value>Mails</Value>
+</Value>
+<Value name="3">
+<Value>numsocio</Value>
+</Value>
+<Value name="4">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="5">
+<Value>nombre</Value>
+</Value>
+<Value name="6">
+<Value>apellidos</Value>
+</Value>
+</Data>
+<Data name="Telefonos">
+<Attribute>Telefonos</Attribute>
+<Structure>subnode</Structure>
+<Subscript>"User.Socio.Telefonos"</Subscript>
+</Data>
+</Storage>
+</Class>
+</Export>

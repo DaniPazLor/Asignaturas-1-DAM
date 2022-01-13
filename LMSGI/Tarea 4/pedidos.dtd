@@ -1,0 +1,14 @@
+<!ELEMENT pedidos  (sucursal+)>
+<!ELEMENT sucursal (direccion+,codPedido,nomTrabajador,fechaPedido,observacion?,plazoRevision,articulo+)>
+<!ATTLIST sucursal codSucursal CDATA #REQUIRED>
+<!ELEMENT direccion (#PCDATA) >
+<!ELEMENT codPedido (#PCDATA) >
+<!ELEMENT nomTrabajador (#PCDATA) >
+<!ELEMENT fechaPedido (#PCDATA) >
+<!ELEMENT observacion (#PCDATA) >
+<!ELEMENT plazoRevision (#PCDATA) >
+<!ELEMENT articulo (unidadesPedidas,precio,observaciones?) >
+<!ATTLIST articulo codArticulo CDATA #REQUIRED>
+<!ELEMENT unidadesPedidas (#PCDATA) >
+<!ELEMENT precio (#PCDATA) >
+<!ELEMENT observaciones (#PCDATA) >

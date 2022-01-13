@@ -1,0 +1,33 @@
+[Config]
+Compilator.SaveAll=0
+Compilator.Capture=0
+Compilator.CompileOnBackground=0
+Compilator.ProgSaveAll=0
+Compilator.ProgRunSelection=0
+Compilator.LogType=0
+DefaultCP=0
+LogtoEnd=1
+DontOpen=0
+AbsolutePath=0
+FileFormat=0
+ProjectFilesOnly=0
+[Project tree]
+Nuevo proyecto
+	+Carpeta
+		Actividades 1-2.rss
+[Open project files]
+0=Nuevo1.txt
+1=Actividades 1-2.rss
+2=Actividad 5.html
+[Selected Project Files]
+Main=
+Selected=Nuevo1.txt
+[Nuevo1.txt]
+TopLine=1
+Caret=1,1
+[Actividades 1-2.rss]
+TopLine=1
+Caret=1,1
+[Actividad 5.html]
+TopLine=1
+Caret=7,8

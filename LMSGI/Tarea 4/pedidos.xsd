@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<!-- Elementos -->
+  <xs:element name="pedidos" type="tipoPedidos"/>
+  
+  <xs:element name="sucursal" type="sucursalDatos"/>
+  
+  <xs:element name="direccion" type="xs:string"/>
+  <xs:element name="codPedido" type="tipoCodPedido"/>
+  <xs:element name="nomTrabajador" type="xs:string"/>
+  <xs:element name="fechaPedido" type="xs:date"/>
+  <xs:element name="observacion" type="tipoObservaciones"/>
+  <xs:element name="plazoRevision" type="xs:positiveInteger"/>
+  <xs:element name="articulo" type="tipoArticulo"/>
+  
+  <xs:element name="unidadesPedidas" type="xs:positiveInteger"/>
+  <xs:element name="precio" type="xs:decimal"/>
+  <xs:element name="observaciones" type="xs:string"/>
+  
+  
+  <!-- Atributos -->
+  <xs:attribute name="codSucursal" type="xs:string"/>
+  
+  <xs:attribute name="codArticulo" type="tipoCodArticulo"/>
+
+
+  <!-- Tipos de Datos (construidos y complejos) -->
+  <xs:complexType name="tipoPedidos">
+    <xs:sequence>
+      <xs:element ref="sucursal" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sucursalDatos">
+    <xs:sequence>
+      <xs:element ref="direccion"/>
+      <xs:element ref="codPedido" minOccurs="1" maxOccurs="1"/>
+      <xs:element ref="nomTrabajador"/>
+      <xs:element ref="fechaPedido"/>
+      <xs:element ref="observacion"/>
+      <xs:element ref="plazoRevision"/>
+      <xs:element ref="articulo"/>
+    </xs:sequence>
+    <xs:attribute ref="codSucursal"/>
+  </xs:complexType>
+
+  <xs:simpleType name="tipoCodPedido">
+    <xs:restriction base="xs:string">
+      <xs:length value="8"/>
+      <xs:pattern value="[A-Z a-z][A-Z a-z 0-9]{7}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+<xs:simpleType name="tipoObservaciones">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="urgente"/>
+      <xs:enumeration value="incompleto"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="tipoArticulo">
+    <xs:sequence>
+      <xs:element ref="unidadesPedidas"/>
+      <xs:element ref="precio"/>
+      <xs:element ref="observaciones"/>
+    </xs:sequence>
+    <xs:attribute ref="codArticulo" use="required"/>
+  </xs:complexType>
+    
+  <xs:simpleType name="tipoCodArticulo">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]{3}[\-][0-9]{3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

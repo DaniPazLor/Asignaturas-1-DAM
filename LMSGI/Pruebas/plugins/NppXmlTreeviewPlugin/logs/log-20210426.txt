@@ -1,0 +1,15 @@
+2021-04-26 20:30:27.651 +02:00 [Warning] '”' es un token inesperado. Se esperaba '"' o '''. línea 1, posición 222.
+System.Xml.XmlException: '”' es un token inesperado. Se esperaba '"' o '''. línea 1, posición 222.
+   en System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   en System.Xml.XmlTextReaderImpl.Throw(String res, String[] args)
+   en System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken(String expectedToken1, String expectedToken2)
+   en System.Xml.XmlTextReaderImpl.ParseAttributes()
+   en System.Xml.XmlTextReaderImpl.ParseElement()
+   en System.Xml.XmlTextReaderImpl.ParseElementContent()
+   en System.Xml.XmlTextReaderImpl.Read()
+   en System.Xml.XmlTextReader.Read()
+   en NppXmlTreeviewPlugin.Parsers.NppXmlNode.ReadChildOrSibling(XmlTextReader xmlTextReader, Int32 currentDepth, NppXmlNode node, String nodeNameAttribute)
+   en NppXmlTreeviewPlugin.Parsers.NppXmlNode.ReadChildOrSibling(XmlTextReader xmlTextReader, Int32 currentDepth, NppXmlNode node, String nodeNameAttribute)
+   en NppXmlTreeviewPlugin.Parsers.NppXmlNode.ReadChildOrSibling(XmlTextReader xmlTextReader, Int32 currentDepth, NppXmlNode node, String nodeNameAttribute)
+   en NppXmlTreeviewPlugin.Parsers.NppXmlNode.ReadChildOrSibling(XmlTextReader xmlTextReader, Int32 currentDepth, NppXmlNode node, String nodeNameAttribute)
+   en NppXmlTreeviewPlugin.Parsers.NppXmlNode.TryParse(String xml, String nodeNameAttribute, ILogger logger, NppXmlNode& nppXmlNode)
